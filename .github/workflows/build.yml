@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+      - uses: bazelbuild/setup-bazelisk@v2
+      - run: brew install llvm
       - run: bazel build //explorer
       - uses: actions/upload-artifact@v3.1.0
         with:
